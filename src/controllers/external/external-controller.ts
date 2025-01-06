@@ -75,6 +75,8 @@ class ExternalController {
 
       const parsedData = await parseCSV(csvBuffer); 
 
+      console.log(parsedData ,"parsedData");
+
       if (parsedData.length > 0) {
         for (const data of parsedData) {
           if (data.IsSynced) delete data.IsSynced;

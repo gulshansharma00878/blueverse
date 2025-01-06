@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Blueverse</title>
+    <script>
+     Handlebars.registerHelper('increment', function(index) {
+  return index + 1;
+});
+    </script>
+    <style>
+      body {
+        font-family: Poppins, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: auto;
+        background-color: #fff;
+        padding: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        background-color: #f3f8fe;
+        padding: 20px;
+      }
+      .header .company {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        color: #181a1e;
+      }
+      .header .date {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #181a1e;
+      }
+      .header .left-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-family: Poppins, sans-serif;
+      }
+      .header .right-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+      .title-container {
+        font-family: Inter;
+        margin: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .left-title {
+        display: flex;
+        flex-direction: column;
+      }
+      .vehicle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding-right: 49px;
+      }
+      .title {
+        font-family: Inter, sans-serif;
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 60px;
+        color: #363636;
+      }
+      .customer-name {
+        font-family: Poppins, sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 60px;
+        color: #1f59af;
+      }
+      .total-amount {
+        font-family: Inter, sans-serif;
+        padding: 16px 25px;
+        background-color: #f3f8fe;
+        border-left: 4px solid #1f59af;
+        font-weight: 500;
+        color: #181a1e;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .total-amount > strong,
+      span {
+        font-family: Poppins, sans-serif;
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: 600;
+      }
+      .total-amount .₹ {
+        font-family: Poppins, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+      }
+      .total-amount .total-₹ {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      .include-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+      }
+      .include {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+      .include-div > strong {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      .section-title {
+        font-size: 20px;
+        color: #181a1e;
+        font-weight: bold;
+      }
+      .wash-services {
+        padding: 32px 25px;
+      }
+      .additional-services-container {
+        padding: 0px 25px 32px 25px;
+      }
+      .additional-services {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .additional-services .wash-amount {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+      .wash-services {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #181a1e;
+      }
+      .wash-services .wash-amount {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+      .service-list {
+        font-family: Poppins, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #181a1e;
+        max-width: 414px;
+      }
+      .service-list ol {
+        padding-left: 0px;
+        list-style: none;
+      }
+      .service-list .service {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #c9d8ef;
+      }
+      .service-list .service span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #181a1e;
+        font-family: Poppins, sans-serif;
+      }
+      .service-list .service .no {
+        margin-right: 20px;
+      }
+      .left-payment-container img {
+        height: 39px;
+        width: 39px;
+      }
+      .payment {
+        font-family: Poppins, sans-serif;
+        padding: 16px 25px;
+        background-color: #f3f8fe;
+        border-left: 4px solid #1f59af;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #181a1e;
+      }
+      .payment > strong,
+      span {
+        font-weight: 600;
+      }
+      .payment-methods {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .payment-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 25px;
+      }
+      .left-payment-container {
+        padding: 26px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 30px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+      .right-payment-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 30px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+      .subscription,
+      .wallet {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+ 
+      @media screen and (max-width: 430px) {
+        .container {
+          padding: 10px;
+        }
+        .left-grid {
+          width: 190px;
+        }
+        .header .date {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+        .header .date > div {
+          padding-top: 10px;
+        }
+        .title {
+          font-size: 18px;
+          line-height: 32px;
+        }
+        .title-container {
+          margin: 14px 0px;
+          flex-direction: column;
+          align-items: flex-start;
+          /* min-width: 430px; */
+        }
+        .customer-name {
+          font-size: 20px;
+          line-height: 32px;
+        }
+        .vehicle {
+          flex-direction: row;
+          align-self: normal;
+          padding-right: 0px;
+          margin-top: 25px;
+          padding: 0px 20px 0px 20px;
+        }
+        .vehicle img {
+          width: 138px;
+          height: 48.73px;
+        }
+        .vehicle-no {
+          display: flex;
+          align-items: start;
+          flex-direction: column;
+          font-size: 10px;
+          font-weight: 500;
+          line-height: 20px;
+        }
+        .total-amount {
+          padding: 16px 10px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+        .total-amount .include-div {
+          display: flex;
+          flex-direction: column;
+          align-self: flex-start;
+          justify-content: space-between;
+        }
+        .total-amount .include-div > strong {
+          align-self: flex-start;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .total-amount .include {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+        .total-amount .₹ {
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 16px;
+        }
+        .total-amount .total-₹ {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .wash-services {
+          padding: 24px 10px;
+        }
+        .wash-services .section-title {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .wash-services .wash-amount {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .additional-services-container {
+          padding: 0px 10px 24px 10px;
+        }
+        .additional-services .wash-amount {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .additional-services .section-title {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .service-list .service span {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 500;
+        }
+        .service-list .service {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 500;
+        }
+        .service-list .service .no {
+          margin-right: 10px;
+        }
+        .payment-container {
+          padding-right: 0px;
+        }
+        .payment {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .left-payment-container {
+          padding: 11px 5px;
+          gap: 16px;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .left-payment-container img {
+          height: 28px;
+          width: 28px;
+        }
+        .right-payment-container {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .left-payment-container span {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+        .right-payment-container span {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+          padding-right: 10px;
+        }
+      }
+    </style>
+  </head>
+<body>
+    <div class="container">
+      <div class="header">
+        <div class="left-grid">
+          <div class="company">{{outletName}}</div>
+          <div class="date">
+            {{gstNumber}} {{address}}<br />
+            <div class="date">{{startDateTime}}</div>
+          </div>
+        </div>
+        <div class="right-grid">
+          <img
+            src="https://blueverse-media.s3.amazonaws.com/assets/blueverseLogo.png"
+          />
+          <img
+            src="https://blueverse-media.s3.amazonaws.com/assets/blueverse.png"
+          />
+        </div>
+      </div>
+      <div class="title-container">
+        <div class="left-title">
+          <div class="title">Thanks for getting a wash with us</div>
+          <div class="customer-name">{{firstName}} {{lastName}}</div>
+        </div>
+        <div class="vehicle">
+          {{#if (eq vehicleType 'FOUR_WHEELER')}}
+          <img
+            src="https://blueverse-media.s3.amazonaws.com/assets/four_wheeler.png"
+          />
+          {{else}}
+          <img
+            src="https://blueverse-media.s3.amazonaws.com/assets/two_wheeler.png"
+          />
+          {{/if}}
+          <div style="font-size: 11px; font-weight: 500; line-height: 20px">
+            Vehicle No:
+            <span style="font-size: 11px; font-weight: 600; line-height: 20px">
+              {{hsrpNumber}}
+            </span>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="total-amount">
+        <div class="include-div">
+          <strong>Total Amount Paid</strong>
+          <div class="temp">
+            <span class="include">Include GST (18%)</span>
+            <span class="₹">₹ {{gstAmount}}</span>
+          </div>
+        </div>
+        <div class="total-₹">₹ {{paymentAmount}}</div>
+      </div>
+ 
+      <div class="wash-services">
+        <div class="section-title">Wash Charge ({{washType}})</div>
+        <div class="wash-amount">₹ {{washPrice}}</div>
+      </div>
+ 
+      <div class="additional-services-container">
+        <div class="additional-services">
+          <div class="section-title">Additional Services</div>
+          <div class="wash-amount">₹ {{totalAdditionalServicePrice}}</div>
+        </div>
+        <div class="service-list">
+          <ol>
+            {{#each additionalService}}
+            <li>
+              <div class="service">
+                <p>
+                  <span class="no">{{increment @index }}. </span
+                  >{{this.additionalServiceName}}
+                </p>
+                <p>₹ {{this.price}}</p>
+              </div>
+            </li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+      <div class="payment-section">
+        <div class="payment">
+          <strong>Payment</strong>
+        </div>
+        <div class="payment-container">
+          <div class="left-payment-container">
+            <div class="subscription">
+              <img
+                src="https://blueverse-media.s3.amazonaws.com/assets/sub.png"
+              />
+              <span> Subscription </span>
+            </div>
+            <div class="wallet">
+              <img
+                src="https://blueverse-media.s3.amazonaws.com/assets/wallet.png"
+              />
+              <span> Wallet </span>
+            </div>
+          </div>
+          <div class="right-payment-container">
+            <span>₹ {{subscription}}</span>
+            <span>₹ {{paymentAmount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

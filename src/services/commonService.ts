@@ -53,6 +53,7 @@ const deductAmount = async (req: any) => {
         where: { transactionId: req.body.Guid },
         raw: true,
       });
+      
       //If transaction not exist deduct amount from wallet
       if (!isTransactionExist) {
         const machineSubscription: any = await OutletMachine.findOne({
@@ -167,6 +168,7 @@ const deductAmount = async (req: any) => {
                   Number(machineDetail.walletBalance) - total
                 );
               }
+              
               await MachineWallet.create({
                 machineId: req.body.MachineGuid,
                 transactionId: req.body.Guid,
@@ -186,6 +188,7 @@ const deductAmount = async (req: any) => {
                 washType: amountToDeduct.type,
               });
             }
+
             await Machine.update(
               {
                 walletBalance: Number(machineWalletBalance),
@@ -198,8 +201,6 @@ const deductAmount = async (req: any) => {
             // generate notification if machine balance less than 100000
           }
         }
-      }else{
-        return ""
       }
     }
   } catch (err) {

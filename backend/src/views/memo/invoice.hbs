@@ -1,0 +1,153 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Document</title>
+    <style>
+      @font-face { font-family: "Metropolis"; src:
+      url("./fonts/metropolis.regular.otf") format("truetype"); } body { margin:
+      0; padding: 0; display: flex; justify-content: center; align-items:
+      center; min-height: 100vh; font-family: "Metropolis", sans-serif;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      .container { box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); padding:
+      10px; } .p1 { font-size: 18px; font-weight: 600; line-height: 24px; } .p2
+      { font-size: 14px; font-weight: 600; line-height: 20px; } .p3 { font-size:
+      16px; font-weight: 600; line-height: 20px; color: rgb(134, 146, 164); }
+      .p4 { font-size: 12px; font-weight: 600; line-height: 16px; } .section2 {
+      margin-top: 24px; display: flex; justify-content: space-between; padding:
+      0px 5px; } .inner_section { flex: 1; } .text_box { margin-top: 12px; }
+      .section3 { margin-top: 24px; } .inner_box { display: flex;
+      justify-content: space-between; align-items: center; padding: 0px 5px; }
+      .line { margin: 24px 0; width: 100%; height: 1px; background-color:
+      rgba(0, 0, 0, 0.12); } .footer { display: flex; justify-content: center;
+      align-items: center; font-size: 32px; font-weight: 600; line-height: 48px;
+      color: rgb(92, 170, 30); margin: 24px 0; }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div
+        style='
+          background-color: #f3f8fe;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+        '
+      >
+        <!-- Header Section (Company details) -->
+        <div style='display: flex; gap: 24px'>
+          <div
+            style='
+              width: 80px;
+              height: 56px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin-top: 24px;
+            '
+          >
+            <img src='./img/Logo.webp' alt='' />
+          </div>
+          <div style='display: flex; flex-direction: column; gap: 4px'>
+            <div style='font-weight: 600; font-size: 20px; line-height: 24px'>
+              BlueVerse India Private Limited
+            </div>
+            <div style='font-weight: 600; font-size: 12px; line-height: 24px'>
+              Email id:
+              {{outlet.blueverseEmail}}
+            </div>
+            <div style='font-weight: 600; font-size: 14px; line-height: 20px'>
+              {{outlet.blueverseAddress}}
+            </div>
+            <div style='font-weight: 600; font-size: 12px; line-height: 20px'>
+              PAN No.
+              {{blueverseDetails.panNo}}
+            </div>
+            <div style='font-weight: 600; font-size: 12px; line-height: 20px'>
+              GSTIN
+              {{outlet.stateGstNo}}
+            </div>
+          </div>
+        </div>
+        <!-- Header Section (Payment details) -->
+      </div>
+      <div>
+        <table>
+          <tr>
+            <td style='padding: 5px' class='p2'>Paid Through:</td>
+            <td
+              style='padding: 5px; text-align: left'
+              class='p2'
+            >{{paymentTransaction.webhookResponse.order_card_name}}</td>
+          </tr>
+          <tr>
+            <td style='padding: 5px' class='p2'>Transaction ID:</td>
+            <td style='padding: 5px; text-align: left' class='p2'>
+              {{paymentTransaction.transactionId}}
+            </td>
+          </tr>
+          <tr>
+            <td style='padding: 5px' class='p2'>Paid On:</td>
+            <td style='padding: 5px; text-align: left' class='p2'>
+              {{paidOn}}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class='section2'>
+        <div class='inner_section'>
+          <div class='p2'>Biller :</div>
+          <div class='text_box'>
+            <div class='p1'>BlueVerse India Private Limited</div>
+            <div class='p2'>{{outlet.blueverseAddress}}</div>
+            <div class='p2'>PAN No. CRDP5201Q</div>
+            <div class='p2'>GSTIN {{outlet.stateGstNo}}</div>
+          </div>
+        </div>
+        <div class='inner_section'>
+          <div class='p2'>Customer :{{dealerName}}</div>
+          <div class='text_box'>
+            <div class='p1'>{{outlet.name}}</div>
+            <div class='p2'>
+              {{outlet.address}}
+            </div>
+            <div class='p2'>
+              {{outlet.city}},{{outlet.state}},{{outlet.region}}
+            </div>
+            <div class='p2'>GSTIN {{outlet.gstNo}}</div>
+          </div>
+        </div>
+      </div>
+      <div class='section3'>
+        <div class='inner_box'>
+          <div class='p1'>{{machineName}} - Invoice {{monthName}}</div>
+          <div>
+            <div class='p4'>Invoice ID</div>
+            <div class='p1'>{{invoiceId}}</div>
+          </div>
+        </div>
+        <div class='line'></div>
+        <div class='inner_box'>
+          <div class='p3'>Taxable Amount</div>
+          <div class='p1'>{{taxableAmount}}</div>
+        </div>
+        <div class='inner_box' style='margin-top: 24px'>
+          <div class='p3'>CGST</div>
+          <div class='p1'> {{cgst}}</div>
+        </div>
+        <div class='inner_box' style='margin-top: 24px'>
+          <div class='p3'>SGST</div>
+          <div class='p1'>{{sgst}}</div>
+        </div>
+        <div class='line'></div>
+        <div class='inner_box'>
+          <div class='p1'>Total Amount Paid</div>
+          <div class='p1'>INR {{totalAmount}}</div>
+        </div>
+      </div>
+      <div class='footer'>Thank you for your payment!</div>
+    </div>
+  </body>
+</html>
