@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { TextField, Button, Grid, Typography, Box } from "@mui/material";
 import { ManageMachinesServices } from "network/manageMachinesServices";
 import Toast from "components/utitlities-components/Toast/Toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ServiceForm = () => {
+  const {machineId} = useParams()
+  // console.log("machineId is", machineId)
   const navigate = useNavigate();
-
   // Form state
   const [formData, setFormData] = useState({
-    machineID:"ab630888-b018-4659-b673-f40f66f02b10",
+    machineId:machineId ?? '',
     serviceCenter: "Rama road- delhi TVS",
     description: "",
   });
