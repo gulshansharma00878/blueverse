@@ -29,7 +29,7 @@ const FileUploadForm = () => {
             setUploadStatus("Uploading...");
             let washResponse = await ManageWashService.importWashList(formData)
             if (washResponse.code === 200 && washResponse.success) {
-                Toast.showErrorToast(`File uploaded successfully!`);
+                Toast.showInfoToast(`File uploaded successfully!`);
                 navigate('/admin/wash-list')
             } else {
                 Toast.showErrorToast("File upload failed. Please try again.");

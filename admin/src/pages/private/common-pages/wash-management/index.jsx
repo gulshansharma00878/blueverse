@@ -531,7 +531,6 @@ function WashList() {
             // </Button>
             <PrimaryButton
                 // variant="outlined"
-                variant="dot"
               startIcon={<AddIcon />}
               onClick={handleImportNavigate}>
                 Import
