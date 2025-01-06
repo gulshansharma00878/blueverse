@@ -60,7 +60,8 @@ function CommonHeader(props) {
     showDropDown2 = false,
     showCard = false,
     CardComponent,
-    isFilterUsed
+    isFilterUsed,
+    importButton 
   } = props
   const goBack = () => {
     backBtnHandler !== null ? backBtnHandler() : navigate(-1)
@@ -284,9 +285,15 @@ function CommonHeader(props) {
               )}
               {filterEnabled && <FilterBox />}
               {downloadEnabled && <DownloadBox />}
+              {importButton && (
+                <Box sx={{ marginLeft: 2 }}>
+                  {importButton}
+                </Box>
+              )}
             </Grid>
           )}
           {twoBtn?.length && !isMobile ? <DualButtons /> : null}
+
         </Grid>
         {headerDate && (
           <Grid item xs={12}>

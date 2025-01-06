@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { Box, IconButton, Typography, useMediaQuery,Button } from "@mui/material"
+import { Box, IconButton, Typography, useMediaQuery } from "@mui/material"
 import AddIcon from "@mui/icons-material/Add";
+import PrimaryButton from "components/utilities-components/Button/CommonButton"
+
 import "./WashList.scss"
 import CommonHeader from "components/utilities-components/CommonHeader/CommonHeader"
 import ListingTable from "components/utilities-components/ListingTable"
@@ -464,30 +466,31 @@ function WashList() {
           })}
         </Box>
         <Box
-              sx={{
-                display: "flex",
-                justifyContent: "last",
-                alignItems: "center",
-              }}
-            >
-        <Button 
-          onClick={handleImportNavigate}
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-          startIcon={<AddIcon />}
           sx={{
-            width: "200px",         
-            overflow: "hidden",     
-            textOverflow: "ellipsis", 
-            whiteSpace: "nowrap",  
+            display: "flex",
+            justifyContent: "last",
+            alignItems: "center",
           }}
-        > Import </Button>
+        >
+          {/* <Button
+            onClick={handleImportNavigate}
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            startIcon={<AddIcon />}
+            sx={{
+              width: "200px",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
+          > Import </Button> */}
 
         </Box>
 
         <CommonHeader
+
           heading="Washes"
           searchEnabled={true}
           filterEnabled={true}
@@ -516,7 +519,27 @@ function WashList() {
           }
           isFilterUsed={isFilterUsed}
           isMobile={isMobile}
+          importButton={(
+            // <Button
+            //   onClick={handleImportNavigate}
+            //   variant="outlined"  // This creates an outlined button
+            //   color="primary"      // Optional: Adds primary color to the button
+            //   sx={{ margin: 2 }}  
+            //   startIcon={<AddIcon />}
+            // >
+            //   Import
+            // </Button>
+            <PrimaryButton
+                // variant="outlined"
+                variant="dot"
+              startIcon={<AddIcon />}
+              onClick={handleImportNavigate}>
+                Import
+            </PrimaryButton>
+          )}
         />
+
+
         <Box sx={{ mt: "16px", mb: "16px" }}>
           <ListingTable columns={columns} tableData={washData} rowNavigate={false} />
         </Box>
