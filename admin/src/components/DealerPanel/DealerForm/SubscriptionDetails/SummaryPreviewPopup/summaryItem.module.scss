@@ -1,0 +1,38 @@
+@import "../../../../../styles/variables.scss";
+
+.summaryBox {
+  margin-bottom: 4rem;
+}
+
+.summaryHeader {
+  background-color: $secondary;
+  padding: 1.2rem 2rem;
+  p {
+    margin-bottom: 0.1rem;
+  }
+}
+
+.machinesSection {
+  display: flex;
+  align-items: center;
+  // overflow-x: auto;
+  justify-content: flex-end !important;
+  .machineBox {
+    background-color: $blue3;
+    width: fit-content;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    height: 4.8rem;
+    border-radius: 0.4rem;
+    color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.8rem;
+    flex-shrink: 0;
+  }
+}
+
+.justifyEnd {
+  justify-content: flex-end !important;
+}

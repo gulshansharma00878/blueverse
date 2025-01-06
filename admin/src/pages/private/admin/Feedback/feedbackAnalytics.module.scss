@@ -1,0 +1,18 @@
+@import "../../../../styles/variables.scss";
+
+.headerBox {
+  height: fit-content;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.detailsText {
+  margin-left: 2rem !important;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,50 @@
+@import "../../../styles/variables.scss";
+
+.qr-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.qrBorder {
+  padding: 1rem 0.8rem 0.5rem;
+  background: linear-gradient(to right, $primary 4px, transparent 4px) 0 0,
+    linear-gradient(to right, $primary 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, $primary 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, $primary 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, $primary 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, $primary 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, $primary 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, $primary 4px, transparent 4px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+}
+
+.details-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardWrapper {
+  padding: 1.6rem;
+}
+
+.info-banner {
+  // width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+  background-color: $secondary;
+}
+
+.info-banner-icon {
+  color: $info-banner-blue;
+}
+
+.privacy-info-text {
+  margin-top: 3.2rem !important;
+}

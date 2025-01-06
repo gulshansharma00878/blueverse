@@ -1,0 +1,42 @@
+@import "../../../styles/variables.scss";
+
+.washFlag {
+  color: white;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem 0.5rem 2.3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+}
+
+.gold-wash {
+  background-color: $gold-wash;
+}
+
+.silver-wash {
+  background-color: $silver-wash;
+}
+.platinum-wash {
+  background-color: $platinum-wash;
+}
+
+.other-wash {
+  background-color: $green;
+}
+
+.leftPosition {
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+  border-top-left-radius: $border-radius;
+}
+.rightPosition {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  border-top-right-radius: $border-radius;
+}
+
+.washFlagBox {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,77 @@
+.custom-toast {
+  border-radius: 1rem !important;
+  height: fit-content;
+  width: 40.4rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 2rem;
+  letter-spacing: 0;
+  line-height: 2.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    font-size: 2rem;
+    margin-bottom: 2rem !important;
+  }
+}
+
+.toast-custom-info {
+  background-color: #00d498 !important;
+  border-radius: 1rem !important;
+  height: fit-content;
+  width: 40.4rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 2rem;
+  letter-spacing: 0;
+  line-height: 2.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    font-size: 2rem;
+    margin-bottom: 2rem !important;
+  }
+}
+
+.toast-custom-warn {
+  background: linear-gradient(135deg, #2b94f8 0%, #005afe 100%);
+  border-radius: 1rem !important;
+  height: 5.6rem;
+  width: 40.4rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 2rem;
+  letter-spacing: 0;
+  line-height: 2.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    font-size: 2rem;
+    margin-bottom: 2rem !important;
+  }
+}
+.toast-custom-notify {
+  background: linear-gradient(135deg, #d9e4f5 0%, #f5e3e6 100%);
+  border-radius: 1rem !important;
+  height: 5.6rem;
+  width: fit-content;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 2rem;
+  letter-spacing: 0;
+  line-height: 2.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    font-size: 2rem;
+    margin-bottom: 2rem !important;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  width: 57.8rem;
+  height: 80vh;
+}
+
+.header {
+  background-color: $blue3;
+  padding: 0 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 11rem;
+
+  .button {
+    background-color: $white-color;
+    border-radius: $border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    cursor: pointer;
+    margin-left: calc(100% - 4.4rem);
+  }
+}
+
+.bodySection {
+  padding: 2rem;
+}
+
+.flag {
+  width: 10rem;
+  margin-left: calc(100% - 10rem);
+}
+
+.divider {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.questionsSection {
+  background-color: $blue5;
+  height: 46.8rem;
+  padding: 1.6rem 2rem;
+  overflow-x: auto;
+  border-radius: 1.2rem;
+}

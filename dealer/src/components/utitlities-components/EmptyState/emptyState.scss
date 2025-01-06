@@ -1,0 +1,13 @@
+@import "../../../styles/variables.scss";
+
+.empty-state-box {
+  align-items: center;
+  margin-top: 5.2rem;
+}
+
+.title-text {
+  font-weight: 500 !important;
+  margin-top: 2.8rem !important;
+  margin-bottom: 2rem !important;
+  color: $text-main;
+}

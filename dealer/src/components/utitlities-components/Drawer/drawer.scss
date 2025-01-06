@@ -1,0 +1,20 @@
+@import "../../../styles/variables.scss";
+
+.drawer {
+  z-index: 1400 !important;
+  width: 38rem;
+  position: relative;
+}
+.filter-wrapper {
+  width: 38rem !important;
+  padding-bottom: 6.2rem;
+}
+.filter-group {
+  padding: 1.6rem;
+}
+.right-align {
+  text-align: right;
+}
+.left-margin {
+  margin-left: 2.4rem;
+}

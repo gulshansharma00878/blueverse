@@ -1,0 +1,216 @@
+@import "../../../../styles/variables.scss";
+
+// generate qr styles
+.wash_box_container {
+  border-radius: 0.8rem;
+  box-shadow: 0rem 0.1rem 0.4rem 0rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.polygon_box {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem 0.5rem 1.5rem;
+  color: $white-color;
+  clip-path: polygon(0 1%, 84% 0, 100% 100%, 0 100%);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+
+  &.gold {
+    background-color: $gold-wash;
+  }
+  &.platinum {
+    background-color: $platinum-wash;
+  }
+  &.silver {
+    background-color: $silver-wash;
+  }
+}
+.text_container {
+  padding: 0.5rem 1.8rem;
+  margin-top: 1rem;
+}
+.textStyle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #181a1e;
+}
+.washTime {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $secondary-text-color;
+}
+.time {
+  color: #181a1e;
+}
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.8rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.btn_style {
+  height: 4.4rem;
+  width: 95%;
+}
+
+// capture feedback style
+
+.cf_box_container {
+  border-radius: 8px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.cf_box_container_child {
+  display: flex;
+  justify-content: space-between;
+}
+.cf_skuNumber {
+  font-size: 16px !important;
+  font-weight: 600;
+  color: $secondary-text-color;
+  margin-top: 6px !important;
+}
+.hrsp_container {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.icon_box {
+  display: flex;
+  align-items: center;
+}
+.hrsp_text {
+  font-size: 18px;
+  font-weight: 600 !important;
+  padding: 0px 18px;
+}
+
+.name_box {
+  margin-top: 12px;
+}
+.bike_box {
+  margin-top: 12px;
+}
+.hrsp_sucessful {
+  width: fit-content;
+  height: fit-content;
+  margin-left: 10px;
+}
+.customer_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #181a1e;
+  padding: 1px 18px;
+}
+.vechile_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: $secondary-text-color;
+}
+.generated_container {
+  display: flex;
+  margin-top: 30px;
+  padding: 3px 18px;
+}
+.generated_container_2 {
+  background-color: #f3f8fe;
+  border-radius: 8px;
+  width: 100%;
+  padding: 6px 18px !important;
+}
+.generated_text {
+  font-size: 12px;
+  font-weight: 600;
+  color: $secondary-text-color;
+}
+
+.capture_feedback_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px 18px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.btnStyle {
+  height: 44px;
+  width: 95%;
+  margin: 10px;
+}
+.btn_barcode {
+  margin-right: 10px;
+}
+
+// feedback completed
+
+.feedback_container {
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px;
+  overflow: hidden;
+}
+.feedback_container_child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sku_heading {
+  font-size: 12px;
+  font-weight: 600;
+  color: $secondary-text-color;
+  margin-right: 10px;
+  margin-top: 6px !important;
+}
+.vechileNumber {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.vechileNumber_text {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 2px 18px;
+  margin: 0;
+}
+.fc_customer_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: $secondary-text-color;
+  padding: 1px 18px;
+  margin: 0;
+}
+.fc_wash_time {
+  font-size: 14px;
+  font-weight: 600;
+  color: $secondary-text-color;
+  padding: 1px 18px;
+}
+.fc_date {
+  color: #181a1e;
+}
+.fc_barcode_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 16px;
+}
+.fc_barcode_container2 {
+  padding: 1px 18px;
+}
+.fc_generated_text {
+  font-size: 12px;
+  font-weight: 600;
+  color: $secondary-text-color;
+  margin: 0;
+}
+.fc_date_text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #181a1e;
+  margin: 0;
+}

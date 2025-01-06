@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+.empty-state-box {
+  align-items: center;
+  margin-top: 5.2rem;
+  margin-left: auto;
+
+  img {
+    width: 42.5rem;
+    height: 42.5rem;
+  }
+}
+
+.title-text {
+  font-weight: 500 !important;
+  margin-top: 2.8rem !important;
+  margin-bottom: 2rem !important;
+  color: $text-main;
+}

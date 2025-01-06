@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+
+.formSection {
+  margin-top: 2.4rem;
+  padding: 10px;
+  // height: calc(100vh - 16rem);
+  // overflow: scroll;
+  box-shadow: 0px 2px 4px 0px rgba(90, 91, 106, 0.12), 0px 0px 2px 0px rgba(58, 58, 68, 0.12);
+  box-sizing: border-box;
+  border-radius: 0.8rem;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 12.5rem; // 12.5rem to match the height of common-footer
+  }
+}
+
+.innerFormSection {
+  border-radius: $border-radius;
+  background-color: $background-color;
+  box-sizing: border-box;
+  padding: 4rem 2rem 2rem 2rem;
+  max-width: 91vw;
+}
+
+.stepperContainer {
+  width: 60%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5.2rem;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+}

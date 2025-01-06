@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+
+.menu {
+  &-paper {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) !important;
+    margin-top: 0.5rem;
+  }
+}
+
+.date_box {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.dateselect_box {
+  display: flex;
+  gap: 1rem;
+}
+.menu-item {
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  line-height: 2rem;
+}
+
+.filter_dropdown-box {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.date-range-text {
+  color: $secondary-text-color;
+}

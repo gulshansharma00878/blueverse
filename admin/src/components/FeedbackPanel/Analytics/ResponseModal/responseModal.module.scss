@@ -1,0 +1,43 @@
+@import "../../../../styles/variables.scss";
+
+.response-modal-container {
+  padding: 3.2rem;
+  width: 71.25rem;
+  max-height: 64rem;
+}
+
+.modal-header {
+  // border: 1px solid black;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 4.8rem;
+}
+
+.close-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-button {
+  height: 4.4rem !important;
+  width: 3.4rem !important;
+  background-color: $secondary !important;
+  color: $primary !important;
+  padding: 0 !important;
+
+  &:hover {
+    background-color: $primary !important;
+    color: $secondary !important;
+  }
+}
+
+.table-body {
+  overflow-x: auto;
+  max-height: 45rem;
+}
+
+.table-row {
+  font-weight: 700;
+  color: $text-main;
+  size: 1.2rem;
+}

@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.backIconBox {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+}
+
+.header_box {
+  margin-left: 2rem;
+}
+
+.back_header_box {
+  display: flex;
+  align-items: center;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.header_btn_text {
+  padding: 2.2rem 8.6rem !important;
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+}
+
+.header_btn_box {
+  display: flex;
+  gap: 1rem;
+}

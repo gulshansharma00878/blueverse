@@ -1,0 +1,59 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  height: 80vh;
+}
+
+.header {
+  background-color: $blue3;
+  padding: 0 25px;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+
+  .button {
+    background-color: $white-color;
+    border-radius: $border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-left: calc(100% - 44px);
+  }
+}
+
+.bodySection {
+  padding: 20px;
+}
+
+.flag {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.divider {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.questionsSection {
+  background-color: $blue5;
+  // height: 468px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 578px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 90vw;
+  }
+}

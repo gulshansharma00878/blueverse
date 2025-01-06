@@ -1,0 +1,42 @@
+@import "../../../styles/variables.scss";
+
+.water_container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.water_box {
+  box-shadow: 0rem 0.1rem 0.4rem 0rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+  width: 100%;
+}
+
+.water_section1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.text_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.line_div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wave_img {
+  width: 100%;
+}
+
+@media screen and (max-width: $small-screen) {
+  .water_container {
+    flex-direction: column;
+    margin-top: 1.6rem;
+  }
+}

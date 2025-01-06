@@ -1,0 +1,45 @@
+@import "../../../styles/variables.scss";
+
+.table_box_container {
+  border-radius: 0.8rem;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.table_head_cell {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  line-height: 16px !important;
+  border-bottom: 2px solid $gray1 !important;
+  color: $text-main !important;
+  text-align: center !important;
+}
+
+.table_cell {
+  border-bottom: none !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  line-height: 16px !important;
+  padding: 0;
+  color: $text-main !important;
+  text-align: center !important;
+}
+
+.table_inner_box {
+  max-height: 100vh;
+  overflow-y: scroll;
+  width: inherit;
+  overflow-x: scroll;
+}
+
+.stickyCell {
+  position: sticky !important;
+  left: 0 !important;
+  background-color: $background-color !important;
+  z-index: 10 !important;
+
+  &--header {
+    @extend .stickyCell;
+    z-index: 20 !important; // Header cell need higher z-index then row cells to show on top of them when scrolled vertically
+  }
+}

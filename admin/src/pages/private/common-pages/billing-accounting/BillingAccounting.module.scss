@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+
+.box_container {
+  margin-top: 3.6rem;
+}
+
+.tablabel_active {
+  font-weight: 60rem !important;
+  background-color: $secondary !important;
+}
+
+.tablabel {
+  font-size: 1.6rem !important;
+  font-weight: 50rem !important;
+  line-height: 2rem !important;
+}
+
+.billingBox {
+  margin-top: 2.2rem;
+  border: 1px solid $border-color;
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+}
+
+.viewText {
+  color: $primary;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sortLabel {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+}
+
+.sortBox {
+  margin-left: 1rem !important;
+}
+
+.amountCardBox {
+  display: flex;
+  justify-content: space-between;
+}

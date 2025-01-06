@@ -1,0 +1,9 @@
+@import "../../../styles/variables.scss";
+
+.empty-metric-state {
+  background-color: $secondary;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius;
+}

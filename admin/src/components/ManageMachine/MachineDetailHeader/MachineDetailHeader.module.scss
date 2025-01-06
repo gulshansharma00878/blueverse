@@ -1,0 +1,109 @@
+@import "../../../styles/variables.scss";
+
+.machine_header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  .backIconBox {
+    background-color: $secondary !important;
+    border-radius: 0.8rem !important;
+    height: 4.4rem;
+    width: 4.4rem;
+  }
+
+  .back_header_box {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .align_item {
+    align-items: center;
+  }
+
+  .title_box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .inner_title_box {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .filter_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .icon_box {
+    background-color: $secondary !important;
+    border-radius: 0.8rem;
+    height: 4.4rem;
+    width: 4.4rem;
+    margin-left: 2rem;
+  }
+}
+
+.linear_progress_bar {
+  width: 20rem;
+  height: 1.8rem;
+  background-color: $silver2;
+  border-radius: 4.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.linear_progress_bar__fill {
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+  transition-delay: 0.5s;
+  animation: progress-bar-fill-animation 2s;
+  animation-fill-mode: forwards;
+}
+
+.success_icon {
+  color: $green;
+}
+.error_icon {
+  color: $yellow;
+}
+.fill_yellow {
+  background-color: $yellow;
+}
+.fill_green {
+  background-color: $green3;
+}
+.fill_red {
+  background-color: $error-text;
+}
+
+.no_text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  position: absolute;
+  top: 0.2rem;
+  left: 1rem;
+}
+.p1_text {
+  position: absolute;
+  top: 0.2rem;
+  left: 6rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+@keyframes progress-bar-fill-animation {
+  0% {
+    width: 0;
+  }
+}
+
+.text_box {
+  display: flex;
+}

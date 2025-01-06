@@ -1,0 +1,93 @@
+@import "../../../styles/variables.scss";
+
+.containerBox {
+  padding: 2rem;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+}
+.machineRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media screen and (max-width: $tab-screen) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: $tab-small-screen) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.machineBox {
+  padding: 1.2rem;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  width: 30.3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  @media screen and (max-width: $tab-screen) {
+    width: 100%;
+  }
+}
+
+.viewBox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rowBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.balanceBox {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.ractangleBox {
+  height: 4.8rem;
+  width: 6.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue3;
+  color: $white-color;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  border-radius: $border-radius;
+}
+
+.textp1 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: $text-main;
+}
+.textp2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: $text-main;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+}
+
+.addBtn {
+  width: 100%;
+  padding: 1.4rem 0px !important;
+}

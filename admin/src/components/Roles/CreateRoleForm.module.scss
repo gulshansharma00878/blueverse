@@ -1,0 +1,125 @@
+@import "../../styles/variables.scss";
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_field {
+  margin-top: 2rem !important;
+  margin-bottom: 0 !important;
+}
+.input_box {
+  display: flex;
+  flex-direction: column;
+  width: 68.8rem;
+  gap: 2rem;
+
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+  }
+}
+
+.status_box {
+  margin-top: 2rem;
+}
+
+.switch_box {
+  display: flex;
+  align-items: center;
+}
+.status_lable {
+  font-weight: 500 !important;
+  color: $secondary-text-color;
+}
+
+.error_message {
+  color: $error-text;
+}
+
+.permission_box {
+  padding: 2rem;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+  margin-top: 2rem;
+}
+
+.permission_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selectAll_CheckBox {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.filter_popup_label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $primary;
+}
+.permission_label {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.permission_list_container {
+  margin-top: 1rem;
+}
+.checkbox_box_container {
+  margin-top: rem;
+}
+
+.permission_title {
+  color: $secondary-text-color;
+}
+
+.permission_checkbox {
+  margin-top: 1rem;
+}
+
+.viewrole_box {
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.viewdetail_box {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.typography_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.option_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cancel_icon {
+  color: $red2 !important;
+}
+
+.checkbox_icon {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+  margin-left: 1.1rem !important;
+}
+
+.inner_grid_container {
+  width: 16.67%;
+  row-gap: 1.2rem;
+
+  @media screen and (max-width: $small-screen) {
+    width: 33.33%;
+  }
+}

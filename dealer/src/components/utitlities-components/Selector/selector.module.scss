@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+.filter-type {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+
+.checkbox {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+  padding: 1rem !important;
+}

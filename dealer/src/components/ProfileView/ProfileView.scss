@@ -1,0 +1,102 @@
+@import "../../styles/variables.scss";
+
+.box_container {
+  align-items: center;
+  position: static;
+  width: 100%;
+  left: 0rem;
+  top: 6.4rem;
+  background: $background-color;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-bottom: 2.4rem;
+  max-height: 75vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.box_container::-webkit-scrollbar {
+  display: none;
+}
+.userimg {
+  height: 13rem;
+  width: 13rem !important;
+  border-radius: $border-radius;
+}
+
+.full_container {
+  width: 102%;
+  height: 80vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.full_container::-webkit-scrollbar {
+  display: none;
+}
+
+.name_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.username_text {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: $text-color;
+}
+
+.content_container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  gap: 2rem;
+}
+
+.heading_text {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: $text-color;
+}
+
+.inner_wrapper {
+  display: flex;
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+.name_text {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: $text-color;
+  margin-top: 0.8rem;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.sub_container {
+  margin-top: 2rem;
+}
+
+.img_container {
+  margin-right: 1rem;
+  width: 13rem;
+  height: 13rem;
+}

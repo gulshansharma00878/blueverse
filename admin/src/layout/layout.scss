@@ -1,0 +1,30 @@
+.sidebar-accordion {
+  max-width: 26rem;
+  .MuiCollapse-wrapper {
+    display: block !important;
+    width: 125%;
+  }
+  .MuiIconButton-root {
+    color: white !important;
+  }
+
+  .MuiAccordionSummary-root {
+    padding: 0rem !important;
+  }
+
+  .MuiAccordionSummary-content {
+    margin: 0rem !important;
+    margin-bottom: 0.8rem !important;
+    align-items: center;
+  }
+
+  .MuiAccordionDetails-root {
+    background-color: rgb(13, 13, 76);
+    max-height: 8.8rem;
+    margin-left: -3rem;
+    //padding-left:42px!important;
+    padding: 0.8rem 0rem 0.3rem 4.2rem !important;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}

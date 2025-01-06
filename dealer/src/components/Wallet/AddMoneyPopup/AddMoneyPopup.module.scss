@@ -1,0 +1,101 @@
+@import "../../../styles/variables.scss";
+
+.containerBox {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  width: 80vw;
+}
+
+.form_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 2rem;
+
+  @media screen and (max-width: $m-screen-con) {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2rem;
+  }
+}
+
+.btn_container {
+  padding: 2.2rem 6.8rem !important;
+  height: 6.4rem;
+
+  @media screen and (max-width: $m-screen-con) {
+    width: 100%;
+    height: 4.8rem;
+  }
+}
+
+.inputfield {
+  width: 100%;
+  height: 7.2rem;
+  @media screen and (max-width: $m-screen-con) {
+    width: 100%;
+    // height: 4.4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.inner_box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  @media screen and (max-width: $m-screen-con) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.inr_text {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  color: $text-main;
+}
+
+.text_box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  // justify-content: space-between;
+}
+
+.p3_text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  color: $secondary-text-color;
+}
+
+.gst_box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.gst_text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2rem;
+  color: $text-main;
+}
+.tax_box {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.loader_box {
+  height: 25vh;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

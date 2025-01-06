@@ -1,0 +1,95 @@
+@import "../../../styles/variables.scss";
+
+.matrix_box {
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+.title_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon_box {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+  height: 4.4rem;
+  width: 4.4rem;
+}
+
+.quality_box {
+  display: grid;
+  padding: 2rem 0 0;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+
+  @media screen and (max-width: $m-screen) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: $m-screen-con) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+.water_box {
+  display: grid;
+  padding: 2rem 0 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  @media screen and (max-width: $m-screen) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.water_inner_box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 8px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  height: 8.9rem;
+}
+
+.water_section1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 2rem 0rem 2rem;
+}
+.quality_inner_box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 2.3rem 1.4rem;
+  border-radius: 0.8rem !important;
+  height: 8.9rem;
+}
+
+.water_section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+.wave_img {
+  width: 100%;
+  border-bottom-left-radius: 0.8rem; 
+  border-bottom-right-radius: 0.8rem; 
+  
+}
+.matrix_inner_box {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  gap: 1.2rem;
+}
+.matrix_inner_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1.2rem;
+  border-radius: 0.8rem;
+}

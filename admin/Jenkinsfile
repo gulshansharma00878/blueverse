@@ -1,0 +1,190 @@
+def COLOR_MAP = [
+    'SUCCESS': 'good',
+    'FAILURE': 'danger',
+    'UNSTABLE': 'warning'
+]
+
+def MESSAGES_MAP = [
+    'SUCCESS': "success",
+    'FAILURE': "failed",
+    'UNSTABLE': "unstable"
+]
+
+def DEV_BUCKET = 'dev.admin.blueverse.foxlabs.in'
+def QA_BUCKET = 'qa.admin.blueverse.foxlabs.in'
+def STAGE_BUCKET = 'stg.admin.blueverse.foxlabs.in'
+def BLUEVERSE_STAGING_BUCKET = 'stage.admin.blueverse.earth'
+def BLUEVERSE_PROD_BUCKET = 'admin.blueverse.earth'
+
+def DEV_DISTRIBUTION = 'E3GN8ZF84UOYQB'
+def QA_DISTRIBUTION = 'E2LQMCZZIUUW36'
+def STAGE_DISTRIBUTION = 'E7ASYZU2FBMQ4'
+def BLUEVERSE_STAGING_DISTRIBUTION = 'EJMDPO9L03B'
+def BLUEVERSE_PROD_DISTRIBUTION = 'EY0AZMT0TG0B6'
+
+def AWS_REGION = 'us-east-1'
+def AWS_CREDENTIAL_ID = 'nhp-aws-iam'
+def BLUEVERSE_CREDENTIAL_ID = 'blueverse-iam-aws'
+
+pipeline {
+    agent any
+    options {
+        // fail build if takes more than 30 minutes, mark reason as build timeout
+        timeout(time: 20, unit: 'MINUTES')
+        // Keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        // Don't run any stage if found to be unstable
+        skipStagesAfterUnstable()
+    }
+    environment {
+        CI                      = "false"
+        DISPLAY_SERVICE_NAME    = 'Blueverse Admin Portal'
+        npm_config_cache        = 'npm-cache'
+        BRANCH_NAME             = sh(script: "echo ${env.BRANCH_NAME}", returnStdout: true).trim()
+    }
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage("Environment Variables") {
+            steps {
+                sh "printenv"
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                echo 'NPM install dependencies.'
+                sh   'npm install --legacy-peer-deps'
+            }
+        }
+        stage('Build Application') {
+            parallel {
+                stage('Building Dev Artifacts') {
+                    when {
+                        branch 'develop'
+                    }
+                    steps {
+                        sh 'CI=false npm run build:dev'
+                    }
+                }
+                stage('Building QA Artifacts') {
+                    when {
+                        branch 'qa'
+                    }
+                    steps {
+                        sh 'CI=false npm run build:qa'
+                    }
+                }
+                stage('Building STAGE Artifacts') {
+                    when {
+                        branch 'staging'
+                    }
+                    steps {
+                        sh 'CI=false npm run build:staging'
+                    }
+                }
+                stage('Building BLUEVERSE-STAGE Artifacts') {
+                    when {
+                        branch 'stage'
+                    }
+                    steps {
+                        sh 'CI=false npm run build:stage'
+                    }
+                }
+                stage('Building BLUEVERSE-PROD Artifacts') {
+                    when {
+                        branch 'master'
+                    }
+                    steps {
+                        sh 'CI=false npm run build:master'
+                    }
+                }
+            }
+        }
+        stage('Pushing artifact to AWS S3') {
+            parallel {
+                    stage('Deploying on dev environment') {
+                        when {
+                            branch 'develop'
+                        }
+                        steps {
+                            withAWS(region: AWS_REGION, credentials: AWS_CREDENTIAL_ID) {
+                              s3Delete(bucket: DEV_BUCKET, path:'**/*')
+                              s3Upload(bucket: DEV_BUCKET, workingDir:'build', includePathPattern:'**/*');
+                              cfInvalidate(distribution: DEV_DISTRIBUTION, paths:['/*'], waitForCompletion: true);
+                            }
+                        }
+                    }
+                    stage('Deploying to QA Environment') {
+                        when {
+                            branch 'qa'
+                        }
+                        steps {
+                            withAWS(region: AWS_REGION, credentials: AWS_CREDENTIAL_ID) {
+                              s3Delete(bucket: QA_BUCKET, path:'**/*')
+                              s3Upload(bucket: QA_BUCKET, workingDir:'build', includePathPattern:'**/*');
+                              cfInvalidate(distribution: QA_DISTRIBUTION, paths:['/*'], waitForCompletion: true);
+                            }
+                        }
+                    }
+                    stage('Deploying to STAGE Environment') {
+                        when {
+                            branch 'staging'
+                        }
+                        steps {
+                            withAWS(region: AWS_REGION, credentials: AWS_CREDENTIAL_ID) {
+                              s3Delete(bucket: STAGE_BUCKET, path:'**/*')
+                              s3Upload(bucket: STAGE_BUCKET, workingDir:'build', includePathPattern:'**/*');
+                              cfInvalidate(distribution: STAGE_DISTRIBUTION, paths:['/*'], waitForCompletion: true);
+                            }
+                        }
+                    }
+                    stage('Deploying to BLUEVERSE-STAGE Environment') {
+                        when {
+                            branch 'stage'
+                        }
+                        steps {
+                            withAWS(region: AWS_REGION, credentials: BLUEVERSE_CREDENTIAL_ID) {
+                              s3Delete(bucket: BLUEVERSE_STAGING_BUCKET, path:'**/*')
+                              s3Upload(bucket: BLUEVERSE_STAGING_BUCKET, workingDir:'build', includePathPattern:'**/*');
+                              cfInvalidate(distribution: BLUEVERSE_STAGING_DISTRIBUTION, paths:['/*'], waitForCompletion: true);
+                            }
+                        }
+                    }
+                    stage('Deploying to BLUEVERSE-PROD Environment') {
+                        when {
+                            branch 'master'
+                        }
+                        steps {
+                            withAWS(region: AWS_REGION, credentials: BLUEVERSE_CREDENTIAL_ID) {
+                              s3Delete(bucket: BLUEVERSE_PROD_BUCKET, path:'**/*')
+                              s3Upload(bucket: BLUEVERSE_PROD_BUCKET, workingDir:'build', includePathPattern:'**/*');
+                              cfInvalidate(distribution: BLUEVERSE_PROD_DISTRIBUTION, paths:['/*'], waitForCompletion: true);
+                            }
+                        }
+                    }
+                }
+        }
+    }
+    // post process for jenkins build, notify on slack and email
+    post {
+        success {
+            // slackSend channel: SLACK_CHANNEL, color: COLOR_MAP[currentBuild.currentResult], message: "*${currentBuild.currentResult}:* Job - ${env.JOB_NAME} ${env.BUILD_NUMBER} successfully deployed, logs (<${env.BUILD_URL}|Open>)"
+            // mail to:"me@example.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+            echo 'Success!'
+        }
+        failure {
+            // slackSend channel: SLACK_CHANNEL, color: COLOR_MAP[currentBuild.currentResult], message: "*${currentBuild.currentResult}:* Job - ${env.JOB_NAME} ${env.BUILD_NUMBER} failed to deploy, logs (<${env.BUILD_URL}|Open>)"
+            echo 'Failed!'
+        }
+        unstable {
+            // slackSend channel: SLACK_CHANNEL, color: COLOR_MAP[currentBuild.currentResult], message: "*${currentBuild.currentResult}:* Job - ${env.JOB_NAME} ${env.BUILD_NUMBER} failed to build: unstable, logs (<${env.BUILD_URL}|Open>)"
+            echo 'Unstable!'
+        }
+        always {
+          deleteDir()
+        }
+    }
+}

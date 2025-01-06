@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+commit_msg=$(cat "$1") 
+regex="^(feat|fix|docs|style|refactor|perf|test|chore)(\([A-Za-z0-9_\-]+\))?: .+$"
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+if ! echo "$commit_msg" | grep -qE "$regex"; then
+    echo "${RED}ERROR: Invalid commit message format. Please use 'type(scope): description'${NC}"
+    exit 1
+fi

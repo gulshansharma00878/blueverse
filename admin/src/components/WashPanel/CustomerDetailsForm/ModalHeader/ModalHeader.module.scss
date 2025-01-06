@@ -1,0 +1,28 @@
+@import "../../../../styles/variables.scss";
+
+.container {
+  background-color: $green2;
+
+  @media screen and (max-width: 600px) {
+    height: 11.2rem;
+  }
+}
+
+.container_waterSaved {
+  background-color: $green2;
+  padding-bottom: 2.5rem;
+}
+
+.closeButton {
+  background-color: $primary !important;
+  color: $background-color !important;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: $border-radius !important;
+  margin-top: 2rem !important;
+  margin-right: 2rem !important;
+
+  &:hover {
+    background-color: $info-banner-blue !important;
+  }
+}

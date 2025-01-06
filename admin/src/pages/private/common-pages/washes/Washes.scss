@@ -1,0 +1,59 @@
+@import "../../../../styles/variables.scss";
+
+.header_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  margin-top: 3.6rem;
+}
+.tablabel {
+  font-size: 1.6rem !important;
+  font-weight: 50rem !important;
+  line-height: 2rem !important;
+}
+
+.tablabel_active {
+  font-weight: 60rem !important;
+  background-color: $secondary !important;
+}
+
+.filterBox {
+  margin-top: 3.6rem;
+  display: flex;
+  justify-content: space-between;
+  &__sortBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+  }
+}
+
+.sortText {
+  line-height: 2rem !important;
+  color: #8692a4;
+}
+
+.sortLabel {
+  margin-left: 1.6rem !important;
+
+  &.active {
+    color: $primary;
+  }
+}
+
+.icon_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sorticonBox {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+  margin-left: 0rem !important;
+}

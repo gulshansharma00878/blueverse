@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.container_box {
+  padding: 2rem;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+
+  .input_box {
+    display: flex;
+    flex-direction: column;
+    width: 55.5rem;
+    gap: 2rem;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+    }
+  }
+
+  .cms_btn_box {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .save_button {
+    padding: 2.2rem 9.2rem;
+
+    &.disable {
+      background-color: $secondary-text-color;
+      color: $white-color;
+    }
+  }
+
+  .cancel_btn {
+    padding: 2.2rem 9.2rem;
+  }
+  .status_lable {
+    font-weight: 500 !important;
+    color: $secondary-text-color;
+  }
+
+  .ql-editor {
+    min-height: 8rem;
+    max-height: 20rem !important;
+  }
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}

@@ -1,0 +1,39 @@
+// Create styling variables
+$border-color: #e5e5e5;
+//  colors
+$primary: #1f59af;
+$secondary: #f3f8fe;
+$background-color: #ffffff;
+$text-color: #383838;
+$info-banner-blue: #79a0da;
+$error-text: #ff0040;
+$header-color: #e8fbf6;
+$border-radius: 0.8rem;
+$gold-wash: #efcb8a;
+$platinum-wash: #b29fcb;
+$silver-wash: #8692a4;
+$secondary-text-color: #8692a4;
+$silver2: #ccd2da;
+$text-main: #181a1e;
+$white-color: #fff;
+$blue1: #c9d8ef;
+$gray1: #e6e9ed;
+$blue3: #668cff; // Added same as in defaultTheme
+$blue4: #3c68ed;
+$blue5: #f8fbff;
+$green: #5ca91d;
+$green2: #e7faf0;
+$green3: #c4f3d9;
+$red1: #ff8086;
+$red2: #ff4049;
+$yellow: #ffb020;
+$boxShadow: 0 0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.2);
+
+// Responsive Breakpoints
+$l-screen-con: 1980px;
+$m-screen: 1024px;
+$m-screen-con: 960px;
+$tab-screen: 768px;
+$small-screen: 600px;
+$mobile-screen: 430px;
+$tab-small-screen: 650px;

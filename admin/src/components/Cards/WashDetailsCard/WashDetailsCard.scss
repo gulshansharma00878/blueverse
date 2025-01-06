@@ -1,0 +1,26 @@
+@import "../../../styles/variables.scss";
+
+.wash-type-badge {
+  color: white;
+  border-top-right-radius: $border-radius;
+  padding: 2px;
+  margin-left: 10%;
+  text-align: center;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.gold-wash {
+  background-color: $gold-wash;
+}
+
+.silver-wash {
+  background-color: $silver-wash;
+}
+.platinum-wash {
+  background-color: $platinum-wash;
+}
+
+.wash-type-text {
+  font-weight: 300;
+  margin-left: 10%;
+}

@@ -1,0 +1,18 @@
+@import "../../../../styles/variables.scss";
+
+.metric-card {
+  background-color: $background-color;
+  padding: 24px 20px;
+  box-shadow: $boxShadow !important;
+}
+
+.chart {
+  margin-top: 48px !important;
+  height: 280px;
+  width: 100%;
+}
+
+.feedback-response {
+  height: fit-content;
+  overflow-y: auto;
+}

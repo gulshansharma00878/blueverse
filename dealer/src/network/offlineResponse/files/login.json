@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "data": {
+    "data": {
+      "user": {
+        "isKycDone": true,
+        "role": "DEALER",
+        "token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY3NjM4MzEzMCwiaWF0IjoxNjc2MzgzMTMwfQ.NHoUhpRyP_9r_dIidMn9vV8w6i01buAlYnEp6tcfx4w"
+      }
+    },
+    "error": null,
+    "message": "User logged-In successfully"
+  },
+  "code": 200
+}

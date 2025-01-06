@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+
+.box_container {
+  margin-top: 3.6rem;
+}
+
+.tablabel_active {
+  font-weight: 600 !important;
+  background-color: $secondary !important;
+}
+
+.tablabel {
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+  line-height: 2rem !important;
+}
+
+.billingBox {
+  margin-top: 2.2rem;
+}
+
+.viewText1 {
+  color: $primary;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.viewText {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+.display {
+  display: flex;
+}
+.alignCenter {
+  align-items: center;
+}
+.invoiceDate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

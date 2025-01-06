@@ -1,0 +1,42 @@
+@import "../../../styles/variables.scss";
+.wrapper {
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  background-color: $background-color;
+  border-radius: 0.5rem;
+  .machineBlock {
+    display: flex;
+  }
+  .machineNameBox {
+    width: 6rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: $blue3;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: $background-color;
+  }
+  .paddingTextBox {
+    padding: 0.5rem;
+  }
+  .balanceText {
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-main;
+  }
+  .commonsSize {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .greyText {
+    color: $secondary-text-color;
+  }
+  .greenText {
+    font-size: 12px;
+    font-weight: 600;
+    color: $green;
+  }
+}

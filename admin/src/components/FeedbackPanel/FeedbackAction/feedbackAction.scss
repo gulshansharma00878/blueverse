@@ -1,0 +1,22 @@
+@import "../../../styles/variables.scss";
+
+.filtericonBox {
+  background-color: $secondary !important;
+  border-radius: 8px !important;
+}
+
+.filter_container {
+  border: 1px solid $border-color;
+  box-shadow: 0px -1px 16px 0px #564aa93d !important;
+}
+
+.select_item {
+  padding-top: 12px !important;
+  padding-left: 20px !important;
+  background-color: $secondary !important;
+}
+
+.select_item_second {
+  padding-top: 12px !important;
+  padding-left: 30px !important;
+}

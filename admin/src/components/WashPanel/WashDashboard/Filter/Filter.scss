@@ -1,0 +1,46 @@
+@import "../../../../styles/variables.scss";
+
+.filtericonBox {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+}
+.filtericonBox2 {
+  background-color: $background-color !important;
+  border-radius: 0.8rem !important;
+  margin: 0 1rem 0 0.25rem !important;
+  height: 4.4rem;
+  width: 4.4rem;
+}
+
+.filter_container {
+  border: 1px solid $border-color;
+  box-shadow: 0px -0.1rem 1.6rem 0px #564aa93d !important;
+}
+
+.select_item {
+  padding-top: 1.2rem !important;
+  padding-left: 2rem !important;
+}
+
+.select_item_second {
+  padding-top: 1.2rem !important;
+  padding-left: 3rem !important;
+}
+
+.checkbox {
+  background-color: $secondary !important;
+  border-radius: 0.8rem !important;
+}
+
+.menu_item_container {
+  max-height: 18rem;
+  overflow: scroll;
+}
+
+.margin-left {
+  margin-left: 0rem !important;
+}
+.filter_icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
