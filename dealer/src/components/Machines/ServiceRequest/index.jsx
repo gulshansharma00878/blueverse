@@ -195,9 +195,9 @@ function ServiceRequest({ startDate = "", endDate = "", machineName }) {
         <Typography variant="s1">Service Requests</Typography>
         {!isMobile && (
           <>
-            <PrimaryButton width={"fit-content"} onClick={handlePopUp}>
+            {/* <PrimaryButton width={"fit-content"} onClick={handlePopUp}>
               {btnTxt}
-            </PrimaryButton>
+            </PrimaryButton> */}
             <PrimaryButton width={"fit-content"} onClick={handleNavigate}>
             {btnTxt}
           </PrimaryButton>

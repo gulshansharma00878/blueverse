@@ -70,6 +70,7 @@ export const API = {
     DUMMYPAYMENT: new APIRouter("/billing/testPayment/encryption", HTTP_METHODS.POST)
   },
   MANAGEMACHINES: {
+    SERVICEREQUEST: new APIRouter("machine/service/request", HTTP_METHODS.POST),
     MACHINESLIST: new APIRouter("/machine", HTTP_METHODS.GET),
     MACHINESSTATUS: new APIRouter("/machine/status/count", HTTP_METHODS.GET),
     MAACHINEDETAIL: new APIRouter("/machine/detail", HTTP_METHODS.GET),

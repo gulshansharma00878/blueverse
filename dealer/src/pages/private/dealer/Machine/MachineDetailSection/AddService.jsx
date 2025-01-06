@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { TextField, Button, Grid, Typography, Box } from "@mui/material";
+import { ManageMachinesServices } from "network/manageMachinesServices"
+import Toast from "components/utitlities-components/Toast/Toast"
+import { useNavigate } from "react-router-dom"
 
-const SampleForm = () => {
+
+const ServiceForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    title: "",
+    serviceCenter: "Rama road- delhi TVS",
     description: "",
-    email: "",
   });
 
   const handleChange = (e) => {
@@ -13,10 +17,21 @@ const SampleForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    // navigate("/dealer/machines/details/ab630888-b018-4659-b673-f40f66f02b10")
+
+    // console.log("Form Submitted:", formData);
+    const response = await ManageMachinesServices.machinesServiceRequest(formData)
+    if (response.success && response.code === 200) {
+      // setData(response?.data)
+      Toast.showInfoToast("Service request stored successfully.");
+      navigate("/dealer/machines/details/ab630888-b018-4659-b673-f40f66f02b10")
+    } else {
+      Toast.showErrorToast(response?.message)
+    }
   };
+
 
   return (
     <Box
@@ -29,35 +44,23 @@ const SampleForm = () => {
         borderRadius: "8px",
         boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
       }}
+      method="post"
       onSubmit={handleSubmit}
     >
       <Typography variant="h5" sx={{ marginBottom: "1rem", textAlign: "center" }}>
-        Sample Form
+        Add new service 
       </Typography>
       <Grid container spacing={2}>
         {/* Title Input */}
         <Grid item xs={12}>
           <TextField
             fullWidth
-            label="Title"
-            name="title"
-            value={formData.title}
+            label="service Center"
+            name="serviceCenter"
+            value={formData.serviceCenter}
             onChange={handleChange}
             variant="outlined"
-            required
-          />
-        </Grid>
-        
-        {/* Email Input */}
-        <Grid item xs={12}>
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            variant="outlined"
+            disabled= {true}
             required
           />
         </Grid>
@@ -93,4 +96,4 @@ const SampleForm = () => {
   );
 };
 
-export default SampleForm;
+export default ServiceForm;

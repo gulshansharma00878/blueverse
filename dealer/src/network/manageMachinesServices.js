@@ -1,5 +1,11 @@
 import { API, NetworkManager } from "./core"
 export class ManageMachinesServices {
+
+  static async machinesServiceRequest(payLoad) {
+    const instance = NetworkManager(API.MANAGEMACHINES.SERVICEREQUEST)
+    return await instance.request( payLoad)
+  }
+
   static async machinesList(params) {
     const instance = NetworkManager(API.MANAGEMACHINES.MACHINESLIST)
     return await instance.request({}, params)
