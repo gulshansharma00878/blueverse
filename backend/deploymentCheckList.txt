@@ -1,0 +1,11 @@
+1. check isAssigned parameter in transaction table
+2. set web hook for payment
+3. update payment gateway keys
+4. Update invoiceDate in outlet machine table
+
+
+
+sudo apt update
+sudo apt install postgis
+CREATE EXTENSION postgis;
+SELECT * FROM pg_extension WHERE extname = 'postgis';

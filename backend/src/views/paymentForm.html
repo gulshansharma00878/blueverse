@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+  </head>
+  <body>
+
+Loading...
+<!-- For production payment url will be changed. Please Ask Payment gateway for testign and production url-->
+ <form id="nonseamless" method="post" name="redirect" action="https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/>
+
+ <input type="hidden" id="encRequest" name="encRequest" value="95707bff5415eacae2187cbc4a20e9430040f69d77840570dd7cd48f947b22b013365ff78ddbc2969ae2a37920d7eb9333e537d8781046bc855387dbb1eaedb1124bd9a7e11440ad539a69b3c8b88fba149f366d150e110dc472aa6297a2bf81c42d9ac1750113e57af94077d3f3c4577a07f0436a76d8915626a9b509ca70f263c44ad55745eca328ca68ce730985bc8bab4d98294c0c27444cc12d94b9f888fa7e298affc8acfd846e0fd751bcaf451cd845651f45d786952086d97bba95ee66f8254545abcd1dada23666707a91c04db234ed6b958eb902cbaa3561b3372538b014dfba66dead15ba5dd808f7a2a977ae006ec4dcf5139e746038d4707cad">
+
+<input type="hidden" name="access_code" id="access_code" value="AVXE05KI18AX66EXXA">
+<script language="javascript">
+
+    setTimeout(() => {
+        document.redirect.submit();
+    }, 500);
+  
+
+</script>
+</form>
+
+  </body>
+</html>

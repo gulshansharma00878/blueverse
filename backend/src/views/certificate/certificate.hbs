@@ -1,0 +1,118 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <style>
+      @font-face { font-family: "Metropolis"; src:
+      url("./fonts/metropolis.regular.otf") format("truetype"); } /* Paste your
+      CSS styles here */ body { font-family: "Metropolis", sans-serif;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      .page { background-color: #fff; max-width: 60%; margin: 0 auto; @media
+      screen and (max-width: 900px) { max-width: 100%; } } .img_container {
+      position: relative; } .header_img { width: 100%; height: auto; margin: 0
+      auto; } .img_text_container { position: absolute; top: 15%; left: 0;
+      right: 0; } .certificate_no_box { position: absolute; right: 10px; bottom:
+      30%; } .overlayText { font-size: 40px; font-weight: 700; text-align:
+      center; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+      .overlayText_p { font-size: 16px; font-weight: 600; text-align: center;
+      color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); } .text_c2 {
+      font-size: 12px; font-weight: 600; color: #ffffff; } .text_no_c2 {
+      font-size: 12px; font-weight: 600; } .text_p2 { font-size: 14px;
+      font-weight: 600; } .text_h5 { font-size: 32px; font-weight: 600; color:
+      #1f59af; } .p_title_text { font-size: 14px; font-family: "Metropolies";
+      font-weight: normal; /* max-width: 340px; */ /* line-height: 1.2px; */ }
+      .p_bold_text { font-size: 14px; font-family: "Metropolies"; font-weight:
+      bold; line-height: 1.2px; } .p_italic_text { font-size: 14px; font-family:
+      "Metropolies"; font-weight: ultralight; line-height: 1.2px; } .container {
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; } .title { font-size: 24px; margin-bottom: 30px; }
+      .subtitle { font-size: 16px; margin-bottom: 10px; } .name { font-size:
+      20px; font-weight: bold; } .m16 { margin-top: 16px; } .divider_box {
+      width: 75%; margin-top: 16px; } .bottom_line { display: flex;
+      flex-direction: row; justify-content: center; align-items: center;
+      margin-bottom: 20px; } .line { width: 50%; height: 2px; background-color:
+      #1f59af; } .dot { width: 9px; height: 9px; border-radius: 50%;
+      background-color: #1f59af; margin: 0 10px; } .paragraph_box { padding:
+      16px; } .mt_paragraph_box { margin-top: 20px; } .img_btm_box { display:
+      flex; flex-direction: row; justify-content: space-around; align-items:
+      center; } .img_logo_box { padding: 16px; } .img_logo { height: 100px;
+      width: 100px; } .img_logo_icon { height: auto; width: 150px; @media screen
+      and (max-width: 600px) { width: 95px; } }
+    </style>
+  </head>
+  <body>
+    <!-- Paste your HTML content here -->
+    <div class='page'>
+      <div class='img_container'>
+        <!-- Add your Image and Text content here -->
+        <img src='img/certificate_header.png' class='header_img' />
+        <div class='img_text_container'>
+          <div class='overlayText'>Certificate</div>
+          <div class='overlayText_p'>For Water Conservation</div>
+        </div>
+        <div class='certificate_no_box'>
+          <div>
+            <div class='text_c2'>BlueVerse</div>
+            <div class='text_c2'>Certificate no.</div>
+          </div>
+          <div class='text_no_c2'>{{certificate}}</div>
+        </div>
+      </div>
+      <div class='container'>
+        <!-- Add your Text content here -->
+        <div class='text_p2'>Presented To</div>
+        <div class='m16'>
+          <div class='text_h5'>{{customerName}}</div>
+        </div>
+        <div class='divider_box'>
+          <div class='bottom_line'>
+            <div class='line'></div>
+            <div class='dot'></div>
+            <div class='line'></div>
+          </div>
+        </div>
+      </div>
+      <div class='paragraph_box'>
+        <!-- Add your Paragraph content here -->
+        <div class='text_box'>
+          <p class='p_title_text'>
+            This certifies that
+            <span class='p_bold_text'> {{customerName}} </span>
+            has washed his 2 wheeler at the
+            <span class='p_bold_text'> TVSM Service Centre </span>using the
+            <span class='p_bold_text'> BlueVerse </span>automated 2 wheeler
+            vehicle washing machine and has conserved
+            <span class='p_bold_text'> 163 Lts </span>
+            of water recycling more than
+            <span class='p_bold_text'> 98% </span>
+            of the water used for the wash.
+          </p>
+        </div>
+        <div class='mt_paragraph_box'>
+          <p class='p_title_text'>
+            Your efforts in conserving water are commendable and we thank you
+            for taking this step in protecting our planet’s valuable resources.
+          </p>
+        </div>
+        <div class='mt_paragraph_box'>
+          <p class='p_title_text'>
+            Every small change leads to a big impact! We sincerely thank you for
+            contributing to a sustainable future!
+          </p>
+        </div>
+      </div>
+      <div class='img_btm_box'>
+        <!-- Add your Image content here -->
+        <div class='img_logo_box'>
+          <img src='img/image_1.png' class='img_logo_icon' />
+        </div>
+        <div class='img_logo_box'>
+          <img src='img/make_india.png' class='img_logo_icon' />
+        </div>
+        <div class='img_logo_box'>
+          <img src='img/TVS_Motor_logo.png' class='img_logo_icon' />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
